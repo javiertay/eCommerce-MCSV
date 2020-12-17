@@ -1,0 +1,30 @@
+.footer{
+    background: rgb(55, 151, 163);
+    color: white;
+}
+.footer .container {
+    padding: 0px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.flex{
+    flex: 1;
+}
+
+.second{
+    flex: 1;
+    margin-left: 20pt;
+}
+
+.footer .copyright {
+    margin-top: 20px;
+    text-align: center;
+}
+
+li {
+    list-style: none;
+    font-size: 12px;
+}

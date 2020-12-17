@@ -1,0 +1,33 @@
+<div class="contact-box">
+    <div class="first">+ 65 9769 1883</div>
+    <div class="second">1902690E@STUDENT.TP.EDU.SG</div>
+    <div class="third">3-5 BUSINESS DAYS DELIVERY & FREE RETURNS</div>
+</div>
+<div class="header-box">
+    <div class="container">
+        <div class="mobile-view">
+            <mat-icon (click)="toggelSidenav()">menu</mat-icon>
+        </div>
+
+        <div class="logo">
+            <a routerLink="/home">logo</a>
+        </div>
+
+        <div class="menu">
+            <ul class="list">
+                <li class="contain" routerLink="/home" routerLinkActive="active"><span>Home</span></li>
+                <li class="contain" routerLink="/product" routerLinkActive="active"><span>Products</span></li>
+                <li class="contain" routerLink="/contact-us" routerLinkActive="active"><span>Contact-Us</span></li>
+
+                <li class="contain" routerLinkActive="active" *ngIf="loggedIn == null ">
+                    <button mat-stroked-button color="primary" (click)="openLoginDialog()">Login</button>
+                </li>
+                <li class="contain" routerLinkActive="active" *ngIf="loggedIn != null ">
+                    <button mat-stroked-button color="primary" (click)="logout()">Logout</button>
+                </li>
+                <li class="contain" routerLink="/cart" routerLinkActive="active"><mat-icon>add_shopping_cart</mat-icon></li>
+            </ul>
+        </div>
+    </div>
+</div>
+

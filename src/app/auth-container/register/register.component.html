@@ -1,0 +1,65 @@
+<mat-horizontal-stepper linear #stepper>
+    <mat-step [stepControl]="firstFormGroup" [editable]="true">
+      <form [formGroup]="firstFormGroup">
+        <div class="example-container">
+          <ng-template matStepLabel>Login Information</ng-template>
+          <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input matInput formControlName="username" placeholder="Username" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" placeholder="Password" type="password" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Confirm Password</mat-label>
+            <input matInput formControlName="cfmPassword" placeholder="Confirm Password" type="password" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup" [editable]="true">
+      <form [formGroup]="secondFormGroup">
+        <div class="example-container">
+          <ng-template matStepLabel>Personal Information</ng-template>
+          <mat-form-field>
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="first_name" placeholder="Ex. 1 Main St, New York, NY" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="last_name" placeholder="Ex. 1 Main St, New York, NY" required>
+          </mat-form-field>          
+          <mat-form-field>
+            <mat-label>Email Address</mat-label>
+            <input matInput formControlName="email" placeholder="Ex. 1 Main St, New York, NY" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Address</mat-label>
+            <input matInput formControlName="address" placeholder="Ex. 1 Main St, New York, NY" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Contact</mat-label>
+            <input matInput formControlName="contact" placeholder="Ex. 1 Main St, New York, NY" type="number" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <h2>Register an Account with us today!</h2>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-raised-button (click)="onRegisterUser()">Submit</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>

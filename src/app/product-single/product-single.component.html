@@ -1,0 +1,69 @@
+<div class="container" *ngIf="product">
+    <div class="product-img-container">
+        <img class="productImg" mat-card-image style="width: 100%; padding: 20px;" src="{{product.poster}}">
+    </div>
+    <div class="product-description">
+        <h2 style="font-weight: 400;"> {{product.item_name}} </h2>
+        <div class="rating-container">
+            <span>Star: 5.0</span>
+            <span class="rating">100 Rating</span>
+            <span class="sold">500 Sold</span>
+        </div>
+        <h2 style="font-weight: 400;"> SGD$ {{product.item_price}} </h2>
+        <div class="description">
+            {{product.item_description}}
+        </div>
+        <div>
+            <form [formGroup]="quantityForm">
+                <mat-form-field>
+                    <mat-label>Quantity</mat-label>
+                    <input matInput type="number" formControlName="purchase_quantity" min="0" max="{{product.item_quantity}}">
+                </mat-form-field>
+            </form>
+        </div>
+
+        <div class="button-group">
+            <button mat-button mat-raised-button color="primary" class="buy-now-button space" [ngClass]="{'disabled': product.item_quantity == 0}">BUY NOW</button>
+            <button mat-button mat-stroked-button color="primary" class="button" [ngClass]="{'disabled': product.item_quantity == 0}">ADD TO CART</button>
+        </div>
+
+
+    </div>
+
+</div>
+
+<div class="description-tabs" *ngIf="product">
+    <mat-tab-group>
+        <mat-tab label="Description">
+            <h2 style="font-weight: 400;">{{product.item_name}}</h2>
+            <div class="description">
+                {{product.item_description}}
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>
+
+<!-- <div class="products-container">
+    <div class="title">
+        Similar Products
+        <button mat-button mat-raised-button color="primary" class="viewAllBtn">
+            View All
+        </button>
+    </div>
+    <div class="body">
+        <mat-card class="example-card" *ngFor="let item of simillarProducts" (click)="productHome()">
+            <img class="productImg" mat-card-image src="{{item.image}}" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+                <p> NIKE FREE RN 2019 ID</p>
+                <p>$120.00</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button mat-stroked-button color="primary" class="button">
+                    ADD TO CART
+                </button>
+                <button mat-button>SHARE
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div> -->
